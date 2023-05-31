@@ -1,0 +1,1 @@
+"[{\"db_id\": \"db1\", \"query\": \"SELECT age, name, born_state FROM head\", \"question\": \"Retrieve age, name and born_state contact information from the head table\"}, {\"db_id\": \"db1\", \"query\": \"SELECT age, name, born_state FROM department\", \"question\": \"Retrieve age, name and born_state contact information from the department table\"}]"
