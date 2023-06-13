@@ -1,0 +1,137 @@
+[
+  {
+    "db_id": "hack_zurich",
+    "question": "How high was the accessibility by bus in Schlieren in 2014?",
+    "question_toks": [
+      "How",
+      "high",
+      "was",
+      "the",
+      "accessibility",
+      "by",
+      "bus",
+      "in",
+      "Schlieren",
+      "in",
+      "2014",
+      "?"
+    ],
+    "query": "select access_by_bus\nfrom accessibility_bus as b\n         join spatialunit as s on b.spatialunit_id = s.spatialunit_id\nwhere s.name = 'Schlieren' and b.year = 2014",
+    "sql": {
+      "from": {
+        "table_units": [
+          [
+            "table_unit",
+            3
+          ],
+          [
+            "table_unit",
+            1
+          ]
+        ],
+        "conds": [
+          [
+            false,
+            2,
+            [
+              0,
+              [
+                0,
+                23,
+                false
+              ],
+              null
+            ],
+            [
+              0,
+              3,
+              false
+            ],
+            null
+          ]
+        ]
+      },
+      "select": [
+        false,
+        [
+          [
+            0,
+            [
+              0,
+              [
+                0,
+                24,
+                false
+              ],
+              null
+            ]
+          ]
+        ]
+      ],
+      "where": [
+        [
+          false,
+          2,
+          [
+            0,
+            [
+              0,
+              13,
+              false
+            ],
+            null
+          ],
+          "\"Schlieren\"",
+          null
+        ],
+        "and",
+        [
+          false,
+          2,
+          [
+            0,
+            [
+              0,
+              22,
+              false
+            ],
+            null
+          ],
+          2014.0,
+          null
+        ]
+      ],
+      "groupBy": [],
+      "having": [],
+      "orderBy": [],
+      "limit": null,
+      "intersect": null,
+      "union": null,
+      "except": null
+    },
+    "query_toks": [
+      "select",
+      "access_by_bus",
+      "from",
+      "accessibility_bus",
+      "as",
+      "b",
+      "join",
+      "spatialunit",
+      "as",
+      "s",
+      "on",
+      "b.spatialunit_id",
+      "=",
+      "s.spatialunit_id",
+      "where",
+      "s.name",
+      "=",
+      "\"Schlieren\"",
+      "and",
+      "b.year",
+      "=",
+      "2014"
+    ]
+  }
+]

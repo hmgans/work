@@ -2,17 +2,9 @@ import argparse
 import json
 import os
 
-# from preprocessing.sql2SemQL import Parser
-# from preprocessing.utils import load_dataSets
-
-
-def validate_values_contained_in_ner(ner_entities, values_ground_truth):
-    for value_gt in values_ground_truth:
-        if not any(ner_entity['name'].lower() == value_gt.lower() for ner_entity in ner_entities):
-            print(f'NER could not find value {value_gt} we were looking for. We might be able to find it later based on heuristics (see pre_processing.py).')
-
-
 if __name__ == '__main__':
+
+    # Parse arguement given in CLI
     arg_parser = argparse.ArgumentParser()
     arg_parser.add_argument('--data_path', type=str, help='dataset', required=True)
     arg_parser.add_argument('--table_path', type=str, help='table dataset', required=False) # Changed from True to False
@@ -24,13 +16,22 @@ if __name__ == '__main__':
 
     ground_truth_values = []
 
-    # Planning to extract 'ground truth values'
+    # Extract 'ground truth values' from each spider json
     for data in datas:
         
-        ground_truth_values.append(data['sql']['where'][2])
-        # for values in data['sql']['where']:
-        #     print(values)
-            #ground_truth_values.append(values[3])
- 
+        for i in range(0, len(data['sql']['where']), 2):
+            ground_truth_values.append(data['sql']['where'][i][3])
 
-print(ground_truth_values)
+        final_values = []
+        for value in ground_truth_values:
+            value = str(value).replace('"','') # Clean strings
+            final_values.append(str(value))
+
+        # Append ground truth values to the json 
+        data['values'] = final_values
+
+    # Modify the file to include ground truth values 
+    with open(args.data_path, 'w', encoding='utf8') as f:
+        json.dump(datas, f)
+
+

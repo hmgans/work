@@ -1,0 +1,79 @@
+[
+  {
+    "db_id": "hack_zurich",
+    "question": "What is the telephone number of Urdorf?",
+    "question_toks": [
+      "What",
+      "is",
+      "the",
+      "telephone",
+      "number",
+      "of",
+      "Urdorf",
+      "?"
+    ],
+    "query": "select tel from spatialunit where name = 'Urdorf'",
+    "sql": {
+      "from": {
+        "table_units": [
+          [
+            "table_unit",
+            1
+          ]
+        ],
+        "conds": []
+      },
+      "select": [
+        false,
+        [
+          [
+            0,
+            [
+              0,
+              [
+                0,
+                12,
+                false
+              ],
+              null
+            ]
+          ]
+        ]
+      ],
+      "where": [
+        [
+          false,
+          2,
+          [
+            0,
+            [
+              0,
+              13,
+              false
+            ],
+            null
+          ],
+          "\"Urdorf\"",
+          null
+        ]
+      ],
+      "groupBy": [],
+      "having": [],
+      "orderBy": [],
+      "limit": null,
+      "intersect": null,
+      "union": null,
+      "except": null
+    },
+    "query_toks": [
+      "select",
+      "tel",
+      "from",
+      "spatialunit",
+      "where",
+      "name",
+      "=",
+      "\"Urdorf\""
+    ]
+  }
+]
